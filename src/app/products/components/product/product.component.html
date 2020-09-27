@@ -1,0 +1,16 @@
+<div class="product__title">
+  <h3>{{ product.title }}</h3>
+</div>
+<div class="product__image">
+  <img [src]="product.image" alt="" />
+  <div (click)="addCart()" class="btn--add">
+    <fa-icon [icon]="icon"></fa-icon>
+  </div>
+</div>
+<div class="product__description">
+  <p>{{ product.description | slice: 0:10 }}</p>
+  <strong>{{ product.price | currency }}</strong>
+  <div>
+    <a [routerLink]="['/products', product.id]">Ver detalle</a>
+  </div>
+</div>
