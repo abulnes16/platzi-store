@@ -2,12 +2,26 @@
   <mat-toolbar-row class="row between-xs">
     <nav>
       <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
-      <a mat-button routerLink="/products" routerLinkActive="active">Productos</a>
+      <a mat-button routerLink="/products" routerLinkActive="active"
+        >Productos</a
+      >
       <a mat-button routerLink="/contact" routerLinkActive="active">Contacto</a>
     </nav>
-    <a mat-raised-button matBadge="4" matBadgeColor="warn">
-      <mat-icon>shopping_cart</mat-icon> 
-      Carrito
-    </a>
+    <div>
+      <a mat-raised-button routerLink="auth/login" class="ml-2"> Login </a>
+      <a mat-raised-button routerLink="auth/register" class="ml-2">
+        Registrate
+      </a>
+      <a
+        routerLink="/order"
+        mat-raised-button
+        [matBadge]="total$ | async"
+        matBadgeColor="warn"
+        class="ml-2"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+        Carrito
+      </a>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>

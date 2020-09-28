@@ -13,6 +13,7 @@ import {
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 import { Product } from '../../../product.model';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -27,14 +28,12 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
   icon = faCartPlus;
   today = new Date();
 
-  constructor() {
+  constructor(
+    private cartService: CartService
+  ) {
     console.log('1. constructor');
   }
 
-  // ngOnChanges(changes: SimpleChanges) {
-  //   console.log('2. ngOnChanges');
-  //   console.log(changes);
-  // }
 
   ngOnInit() {
     console.log('3. ngOnInit');
@@ -50,7 +49,8 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
 
   addCart() {
     console.log('añadir al carrito');
-    this.productClicked.emit(this.product.id);
+    this.cartService.addCart(this.product);
+    /* this.productClicked.emit(this.product.id); */
   }
 
 }
