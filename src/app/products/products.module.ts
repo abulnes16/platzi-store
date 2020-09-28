@@ -7,7 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductsRoutingModule } from './products-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
-
+import { MaterialModule } from './../material/material.module';
 
 
 @NgModule({
@@ -21,6 +21,7 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
     FontAwesomeModule,
     ProductsRoutingModule,
+    MaterialModule,
   ]
 })
 export class ProductsModule { }
